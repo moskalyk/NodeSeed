@@ -1,0 +1,42 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en" ng-app="Mean">
+  <head>
+
+    <title>Mean Seed</title>
+
+    <!--SO Meta -__- --> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='keywords' content=''/>
+    <meta name='author' content='Morgan Moskalyk'/>
+    <meta name='description' content=''/>
+    <meta property='og:url' content=''/>
+    <meta property='og:title' content=""/>
+    <meta property='og:description' content=""/>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="./bower_components/materialize/dist/css/materialize.min.css" >
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+
+    <!-- Load Jquery and Angular with Bower. -->
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./bower_components/angular-route/angular-route.min.js"></script>
+
+    <!-- Materialize -->
+    <script type="text/javascript" src="./bower_components/materialize/dist/js/materialize.min.js"></script>
+
+    <!-- Basic Angular App -->
+    <script type="text/javascript" src="app.js"></script>
+   
+    <!-- Controllers -->
+    <script type="text/javascript" src="controllers/loginController.js"></script>
+
+  </head>
+  <body ng-controller="mainController">
+    <!-- angular injection -->
+    <div ng-view class="view-container"></div>
+  </body>
+
+
+</html>
