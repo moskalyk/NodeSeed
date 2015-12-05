@@ -43,6 +43,9 @@ To change the main page, go into views/login.html for the html, or controllers/l
 - [mongoose](http://mongoosejs.com/): Elegant mongodb object modeling for Node.js. - (v*.*)
 - [morgan](https://github.com/expressjs/morgan):HTTP request logger middleware for Node.js. - (v1.0)
 
+###Versions
+1. NodeSeed - Perform $ git checkout NodeSeed to use a bare NodeJs Project
+
 #TODOs
 ###Create Different Branches for versions
 - Full
