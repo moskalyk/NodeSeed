@@ -6,7 +6,7 @@ var express 		= require('express'),
 	cookieParser 	= require('cookie-parser'),
 	bodyParser 		= require('body-parser'),
 	compression		= require('compression'),
-	port 			= process.env.PORT || 1330,
+	port 			= process.env.PORT || 3000,
 	methodOverride 	= require('method-override');
 	db 				= require('mongoose') //shhh this is global for our schemas
 
@@ -23,8 +23,6 @@ app.use(helmet())
 app.use(logger('dev'))
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + '/public'));
-app.use('/controllers',express.static(__dirname, 'public/controllers'));
 app.use(cookieParser()); 
 
 
