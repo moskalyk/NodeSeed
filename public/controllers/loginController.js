@@ -1,20 +1,41 @@
 //angular
-Mean.controller('loginController', function($scope, $http, $location) {
+MTC.controller('loginController', function($scope, $http, $location) {
     $scope.submit = function(accountID) {
+        var firstName = $('#first-name').val()
+        var lastName = $('#last-name').val()
+        var domain = $('#domain').val()
+        var emails = []
+
+        //Simple
+        emails.push(firstName + '@'+domain)
+        emails.push(lastName + '@'+domain)
+
+        //Basics
+        emails.push(firstName + lastName + '@'+domain)
+        emails.push(firstName + '.' +lastName + '@'+domain)
+        emails.push(firstName.substring(0,1) + lastName + '@'+domain)
+        emails.push(firstName.substring(0,1) + '.' + lastName + '@'+domain)
+        emails.push(firstName + lastName.substring(0,1) + '@'+domain)
+        emails.push(firstName + '.' +lastName.substring(0,1) + '@'+domain)
+        emails.push(firstName.substring(0,1) + lastName.substring(0,1) + '@'+domain)
+        emails.push(firstName.substring(0,1) + '.' + lastName.substring(0,1) + '@'+domain)
+
+        //Backwards
+
+        var masterEmailList = ''
+
+        for (var i = 0; i < emails.length-1; i++)
+            masterEmailList += emails[i] +', '
         
-        console.log("ahoy!");        
-        $scope.accountID = accountID;
+        masterEmailList += emails[emails.length-1]
 
-        $http.get("/login/" + accountID).success(function(res) {
-            if (res){
-                //console.log("In Login controller-> " + res.toSource());
-                currentUser = res;
-                $location.path("/account/"+ accountID);
+        $("body").append("<input type='text' id='temp' style='position:absolute;opacity:0;'>");
+        $("#temp").val(masterEmailList).select();
+        document.execCommand("copy");
+        $("#temp").remove();
 
-            } else {
-
-                alert('YOUUUU SHALLLLLLLL NOTT PASSSS!!!');
-            }
-        });
+        console.log(masterEmailList)
+        alert('Your emails have been generated!')
+        
     };
 });

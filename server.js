@@ -6,7 +6,7 @@ var express 		= require('express'),
 	cookieParser 	= require('cookie-parser'),
 	bodyParser 		= require('body-parser'),
 	compression		= require('compression'),
-	port 			= process.env.PORT || 1330,
+	port 			= process.env.PORT || 3000,
 	methodOverride 	= require('method-override');
 	db 				= require('mongoose') //shhh this is global for our schemas
 

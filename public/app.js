@@ -1,10 +1,8 @@
  
- var Mean = angular.module('Mean', ['ngRoute']);
- 
- url = "http://localhost:1330"
+ var MTC = angular.module('MTC', ['ngRoute']);
 
  // configure our routes
- Mean.config(function($routeProvider) {
+ MTC.config(function($routeProvider) {
 
      $routeProvider
      .when('/', {
@@ -16,5 +14,5 @@
       });
  });
  
- Mean.controller('mainController', function($scope) {
+ MTC.controller('mainController', function($scope) {
  });

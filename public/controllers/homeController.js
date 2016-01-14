@@ -1,6 +1,4 @@
 //angular
-Mean.controller('homeController', function($scope, $http, $location) {
+MTC.controller('homeController', function($scope, $http, $location) {
 
-alert('hey')
-    
 });
