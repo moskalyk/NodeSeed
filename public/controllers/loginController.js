@@ -52,28 +52,24 @@ MTC.controller('loginController', function($scope, $http, $location) {
         emails.push(firstName.substring(0,1) + '-' +lastName + '@'+ domain)
         emails.push(firstName + '-' +lastName.substring(0,1) + '@'+ domain)
         emails.push(firstName.substring(0,1) + '-' + lastName.substring(0,1) + '@'+ domain)
-
         emails.push(lastName + '-' + firstName.substring(0,1) + '@'+ domain)
         emails.push(lastName.substring(0,1) + '-' + firstName + '@'+ domain)
         emails.push(lastName.substring(0,1) + '-' + firstName.substring(0,1) + '@'+ domain)
-        
-        // emails.push(lastName + '-' + middleName.substring(0,1) + '-' + firstName + '@'+ domain)
-        // emails.push(lastName.substring(0,1) + '-' + middleName + '-' + firstName.substring(0,1) + '@'+ domain)
-        // emails.push(lastName+ '-' + middleName + '-' + firstName + '@'+ domain)
+        emails.push(lastName + '-' + middleName.substring(0,1) + '-' + firstName + '@'+ domain)
+        emails.push(lastName.substring(0,1) + '-' + middleName + '-' + firstName.substring(0,1) + '@'+ domain)
+        emails.push(lastName+ '-' + middleName + '-' + firstName + '@'+ domain)
        
         //Underscores
         emails.push(firstName + '_' +lastName + '@'+ domain)
         emails.push(firstName.substring(0,1) + '_' +lastName + '@'+ domain)
         emails.push(firstName + '_' +lastName.substring(0,1) + '@'+ domain)
         emails.push(firstName.substring(0,1) + '_' + lastName.substring(0,1) + '@'+ domain)
-
         emails.push(lastName + '_' + firstName.substring(0,1) + '@'+ domain)
         emails.push(lastName.substring(0,1) + '_' + firstName + '@'+ domain)
         emails.push(lastName.substring(0,1) + '_' + firstName.substring(0,1) + '@'+ domain)
-        
-        // emails.push(lastName + '_' + middleName.substring(0,1) + '_' + firstName + '@'+ domain)
-        // emails.push(lastName.substring(0,1) + '_' + middleName + '_' + firstName.substring(0,1) + '@'+ domain)
-        // emails.push(lastName+ '_' + middleName + '_' + firstName + '@'+ domain)
+        emails.push(lastName + '_' + middleName.substring(0,1) + '_' + firstName + '@'+ domain)
+        emails.push(lastName.substring(0,1) + '_' + middleName + '_' + firstName.substring(0,1) + '@'+ domain)
+        emails.push(lastName+ '_' + middleName + '_' + firstName + '@'+ domain)
 
 
         var masterEmailList = ''
