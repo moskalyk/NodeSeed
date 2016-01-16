@@ -1,26 +1,168 @@
+
+
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="bootstrap admin template">
+  <meta name="author" content="">
+
+  <title>Maple Tree Capital | Register</title>
+  <!-- Inline -->
+  <!-- <link rel="stylesheet" href="../examples/css/pages/login-v2.min.css"> -->
+
+<!--   <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="../images/favicon.ico"> -->
+
+  <!-- Stylesheets -->
+<!--   <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-extend.min.css">
+  <link rel="stylesheet" href="../css/site.min.css"> -->
+
+  <!-- Plugins -->
+<!--   <link rel="stylesheet" href="../vendor/animsition/animsition.css">
+  <link rel="stylesheet" href="../vendor/asscrollable/asScrollable.css">
+  <link rel="stylesheet" href="../vendor/switchery/switchery.css">
+  <link rel="stylesheet" href="../vendor/intro-js/introjs.css">
+  <link rel="stylesheet" href="../vendor/slidepanel/slidePanel.css">
+  <link rel="stylesheet" href="../vendor/flag-icon-css/flag-icon.css"> -->
+
+  <!-- Fonts -->
+<!--   <link rel="stylesheet" href="../fonts/web-icons/web-icons.min.css">
+  <link rel="stylesheet" href="../fonts/brand-icons/brand-icons.min.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'> -->
+  
+
+  <!--[if lt IE 9]>
+    <script src="../vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../vendor/media-match/media.match.min.js"></script>
+    <script src="../vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+
+</head>
 <body>
-<div class="container">
-	<div class="row">
-		<div class="col s12">
-			<br><br><br><br><br>
-			<div class="intro center">
-			  <img src="../img/maple-tree-capital.png">
-			  <h5 class="grey-text">Rapportive Generator</h5>
-			</div>
-		</div>
-	</div>
-	
- 	<div class="row">
- 		<div class="col s4 offset-s4">
-			<label for="username">Account ID</label>
-			<br>
-			<input type="text" name="FirstName" id="first-name"  placeholder="First Name"/>
-			<input type="text" name="MiddleName" id="middle-name"  placeholder="Middle Name"/>
-			<input type="text" name="LastName" id="last-name" placeholder="Last Name"/>
-			<input type="text" name="Domain" id="domain"  placeholder="Domain"/>
-			<a id="login" class="waves-effect btn danger" ng-click="submit()">Generate Emails</a>
- 		</div>
- 	</div>
-</div>
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+
+  <!-- Page -->
+  <div class="page-login-v2 layout-full page-dark wow fadeIn">
+      <div class="page" data-animsition-in="fade-in" data-animsition-out="fade-out">
+    <div class="page-content">
+      <div class="page-brand-info">
+        <div class="brand">
+          <h2 class="brand-text font-size-40">Maple Tree Capital</h2>
+        </div>
+        <p class="font-size-20" style="margin-left: 22px;">Preserve your legacy.</p>
+      </div>
+
+      <div class="page-login-main" style="height: 100vh">
+        <div class="brand visible-xs">
+          <!-- <img class="brand-img" src="../_img/MTC-logo.png" > -->
+          <h3 class="brand-text font-size-40">Maple Tree Capital</h3>
+        </div>
+          <div align="center">
+          	<img class="brand-img" align='middle' src="../_img/MTC-logo.png" >
+
+          </div>
+        <!-- <h3 class="font-size-24">Sign In</h3> -->
+
+        <!-- <p>Sign up with us to begin reacting to social matters.</p> -->
+        <form>
+          <div class="form-group">
+            <label class="sr-only" for="inputEmail">Email</label>
+            <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="inputPassword">Password</label>
+            <input type="password" class="form-control" id="inputPassword" name="password"
+            placeholder="Password">
+          </div>
+          <div class="form-group clearfix">
+            <div class="checkbox-custom checkbox-inline checkbox-primary pull-left" required>
+              <!-- <input type="checkbox" id="remember" name="checkbox"> -->
+              <!-- <label for="inputCheckbox">Remember me</label> -->
+            </div>
+            <a class="pull-right" href="forgot-password.html">Forgot password?</a>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block" href="" ng-click="signIn()">Sign in</button>
+        </form>
+        <div id="message-notifier"></div>
+        
+
+        <!-- <p>No account? <a href="" ng-click="redirectSignUp()">Sign Up</a></p> -->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <!-- <footer class="page-copyright">
+          
+      </div>
+
+    </div>
+  </div>
+  <!-- End Page -->
+  </div>
+
+
+
+<!--   // <script src="../vendor/jquery/jquery.js"></script>
+  // <script src="../vendor/bootstrap/bootstrap.js"></script>
+  // <script src="../vendor/animsition/jquery.animsition.js"></script>
+  // <script src="../vendor/asscroll/jquery-asScroll.js"></script>
+  // <script src="../vendor/mousewheel/jquery.mousewheel.js"></script>
+  // <script src="../vendor/asscrollable/jquery.asScrollable.all.js"></script>
+  // <script src="../vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+
+  // <script src="../vendor/switchery/switchery.min.js"></script>
+  // <script src="../vendor/intro-js/intro.js"></script>
+  // <script src="../vendor/screenfull/screenfull.js"></script>
+  // <script src="../vendor/slidepanel/jquery-slidePanel.js"></script>
+
+  // <script src="../vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+  // <script src="../js/core.js"></script>
+  // <script src="../js/site.js"></script>
+
+  // <script src="../js/sections/menu.js"></script>
+  // <script src="../js/sections/menubar.js"></script>
+  // <script src="../js/sections/sidebar.js"></script>
+
+  // <script src="../js/configs/config-colors.js"></script>
+  // <script src="../js/configs/config-tour.js"></script>
+
+  // <script src="../js/components/asscrollable.js"></script>
+  // <script src="../js/components/animsition.js"></script>
+  // <script src="../js/components/slidepanel.js"></script>
+  // <script src="../js/components/switchery.js"></script> -->
+
+  <!-- Scripts For This Page -->
+  <!-- // <script src="../js/components/jquery-placeholder.js"></script> -->
+
+  <script>
+    (function(document, window, $) {
+      'use strict';
+      
+      $(document).ready(function() {
+        console.log('running this')
+        var Site = window.Site;
+        Site.run();
+      });
+    })(document, window, jQuery);
+  // </script>
+
+
 </body>
 
+</html>

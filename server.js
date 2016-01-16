@@ -11,11 +11,11 @@ var express 		= require('express'),
 	db 				= require('mongoose') //shhh this is global for our schemas
 
 // DATBASE CONFIGS ===================================
-// db.connect('mongodb://<user>:<password>@ds031792.mongolab.com:<somenumber>/<databasename>', function(err, db) {
-//     if (err) throw err;
-//     console.log("Connected to Database");
-//     _db = db 
-// })
+db.connect('mongodb://morgan:password@ds047075.mongolab.com:47075/mapletreecapital', function(err, db) {
+    if (err) throw err;
+    console.log("Connected to Database");
+    _db = db 
+})
 
 // EXPRESS CONFIGS ===================================
 app.use(compression())

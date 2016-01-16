@@ -1,0 +1,70 @@
+
+<div ng-controller='headerController'>
+<nav class="site-navbar  navbar navbar-default navbar-fixed-top navbar-mega " role="navigation" >
+  <div class="navbar-header site-menubar-light">
+    <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+    data-toggle="menubar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+      <div style="text-align: center;">
+        <span class="navbar-brand-text"> Maple Tree Capital</span>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-container container-fluid">
+    <ul class="nav navbar-toolbar">
+      <li class="hidden-float" id="toggleMenubar">
+        <a data-toggle="menubar" href="" >
+          <i class="icon hamburger hamburger-arrow-left">
+              <span class="sr-only">Toggle menubar</span>
+              <span class="hamburger-bar"></span>
+            </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="site-menubar">
+  <div class="site-menubar-body">
+    <div>
+      <ul class="site-menu">
+        <li class="site-menu-category">{{poop}}</li>
+        <br>
+        <li id='data-dot-com-tab' class="site-menu-item" ng-click="dataDotCom()" >
+          <a   >
+            <i class="site-menu-icon fa fa-database" ></i>
+            <span class="site-menu-title" >Data.com</span>
+          </a>
+        </li>
+        <li id='full-contact-tab' class="site-menu-item" ng-click="fullContact()">
+          <a   >
+            <i class="site-menu-icon fa fa-user" aria-hidden="true"></i>
+            <span class="site-menu-title">Full Contact</span>
+          </a>
+        </li>
+        <li id='rapportive-tab' class="site-menu-item" ng-click="rapportive()" >
+          <a >
+            <i class="site-menu-icon fa fa-envelope" aria-hidden="true"></i>
+            <span class="site-menu-title">Rapportive</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-menubar-footer">
+  <a href="" data-placement="top" data-toggle="tooltip" data-original-title="Logout" ng-click="logout()">
+    <span class="icon wb-power" aria-hidden="true"></span>
+  </a>
+  </div>
+</div>
+</div>
+
+
+  <script src="../js/sections/menu.js"></script>
+  <script src="../js/sections/menubar.js"></script>
+  <script src="../js/sections/sidebar.js"></script>
+
+  <script src="../examples/js/advanced/scrollable.js"></script>

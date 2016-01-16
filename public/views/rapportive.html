@@ -1,0 +1,89 @@
+<!-- <body>
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<br><br><br><br><br>
+			<div class="intro center">
+			  <img src="../_img/maple-tree-capital.png">
+			  <h5 class="grey-text">Rapportive Generator</h5>
+			</div>
+		</div>
+	</div>
+	
+ 	<div class="row">
+ 		<div class="col s4 offset-s4">
+			<label for="username">Account ID</label>
+			<br>
+			<input type="text" name="FirstName" id="first-name"  placeholder="First Name"/>
+			<input type="text" name="MiddleName" id="middle-name"  placeholder="Middle Name"/>
+			<input type="text" name="LastName" id="last-name" placeholder="Last Name"/>
+			<input type="text" name="Domain" id="domain"  placeholder="Domain"/>
+			<a id="login" class="waves-effect btn danger" ng-click="submit()">Generate Emails</a>
+ 		</div>
+ 	</div>
+</div>
+</body> -->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="maple tree capital">
+  <meta name="author" content="">
+
+  <title>Data.com | Maple Tree Capital</title>
+  
+  <!--[if lt IE 9]>
+    <script src="../vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../vendor/media-match/media.match.min.js"></script>
+    <script src="../vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script>
+    Breakpoints();
+  </script>
+</head>
+<body class="dashboard">
+ 
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<div ng-include="'templates/navigation.html'"></div>
+  <!-- Page -->
+  <div class="page">
+    <div class="page-content padding-30 container-fluid" style="height: 100vh;">
+      <div class="row" data-plugin="matchHeight" data-by-row="true">
+        <div class="col-md-12">
+          <div class="panel" style="margin-top: 60px;">
+            <div class="panel-body container-fluid">
+              <div class="example-wrap">
+                <!-- <h4 class="example-title">Polygons</h4> -->
+                <div class="example">
+                  <h1>Rapportive Email Generator</h1>
+                  <div class="col-md-6">
+                    <div class="form-group" >
+                      <input type="text" class="form-control input-lg" placeholder="First Name" id='first-name' style="margin-bottom: 20px;">
+                      <input type="text" class="form-control input-lg" placeholder="Middle Name" id='middle-name' style="margin-bottom: 20px;">
+                      <input type="text" class="form-control input-lg" placeholder="Last Name" id='last-name' style="margin-bottom: 20px;">
+                      <input type="text" class="form-control input-lg" placeholder="Domain (e.g. 'gmail.com'" id='domain' style="margin-bottom: 20px;">
+                    </div>
+                    <button type="button" class="btn btn-lg btn-success btn-outline btn-round" ng-click="submit()">Generate Emails</button>
+                  </div>
+                  <div class="col-md-6">
+                    <div id='message-notifier'></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+

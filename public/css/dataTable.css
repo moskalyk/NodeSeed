@@ -1,0 +1,108 @@
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  text-align: left;
+  width: 132px;
+}
+
+.dropdown-text {
+  cursor: pointer;
+  position: absolute;
+  text-indent: 10px;
+  line-height: 32px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(255,255,255, .9) inset, 0 1px 3px rgba(0,0,0, .1);
+  width: 100%;
+}
+
+.dropdown-text:after {
+  position: absolute;
+  right: 6px;
+  top: 15px;
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  border-color: #555 transparent transparent transparent;
+}
+
+.dropdown-text,
+.dropdown-content a {
+  color: #333;
+  text-shadow: 0 1px #fff;
+}
+
+.dropdown-toggle {
+  font-size: 0;
+  z-index: 1;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  border: none;
+  padding: 0;
+  margin: 0 0 0 1px;
+  background: transparent;
+  text-indent: -10px;
+  height: 34px;
+  width: 100%;
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+}
+
+.dropdown-content {
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  transition: all .25s ease;
+  list-style-type: none;
+  position: absolute;
+  top: 32px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  visibility:hidden;
+  border-radius: 3px;
+  text-indent: 10px;
+  line-height: 32px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  width: 140px;
+}
+
+.dropdown-content a {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background: #e8e8e8;
+}
+
+
+.dropdown-toggle:hover ~ .dropdown-text,
+.dropdown-toggle:focus ~ .dropdown-text {
+  background-color: #e8e8e8;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text {
+  box-shadow: 0 1px 3px rgba(0,0,0, .2) inset, 0 1px 0 rgba(255,255,255, 0.8);
+  z-index: 2;
+}
+
+.dropdown-toggle:focus ~ .dropdown-text:after {
+  border-width: 0 4px 5px 4px;
+  border-color: transparent transparent #555 transparent;
+}
+
+.dropdown-content:hover,
+.dropdown-toggle:focus ~ .dropdown-content {
+  opacity: 1;
+  visibility:visible;
+  top: 42px;
+}

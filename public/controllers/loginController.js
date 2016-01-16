@@ -1,91 +1,78 @@
-//angular
+
 MTC.controller('loginController', function($scope, $http, $location) {
-    $scope.submit = function(accountID) {
-        var firstName = $('#first-name').val()
-        var lastName = $('#last-name').val()
-        var middleName = $('#middle-name').val()
-        var domain = $('#domain').val()
-        var emails = []
+    deleteAllNotifications = function(){
+        if($("#alert-warning-fields").length > 0)
+            $("#alert-warning-fields").remove()
+        if($("#alert-warning-passwords").length > 0)
+            $("#alert-warning-passwords").remove()
+        if($("#alert-warning-email-exists").length > 0)
+            $("#alert-warning-email-exists").remove()
+    }
 
-        //Simple
-        emails.push(firstName + '@' + domain)
-        emails.push(lastName + '@' + domain)
+    $scope.signIn = function(){
+        console.log('Attempting to sign in.')
+        deleteAllNotifications();
+        if($("#inputEmail").val().length ==0 || $("#inputPassword").val().length ==0 ){
+            var notification = "<div id='alert-warning-fields' class=\"alert alert-danger alert-sm\">"
+                + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"
+                + "<span class=\"fw-semi-bold\">Please fill out all fields.</span>"
+                + "</div>"
+            $('#message-notifier').append(notification)
+        }else{
+            console.log('looking up')
+            var user = {
+                Email: $("input[name=email]").val(),
+                Password: $("input[name=password]").val()
+            }
 
-        //Basics
-        emails.push(firstName + lastName + '@'+ domain)
-        emails.push(firstName + '.' + lastName + '@' + domain)
-        emails.push(firstName.substring(0,1) + lastName + '@' + domain)
-        emails.push(firstName.substring(0,1) + '.' + lastName + '@' + domain)
-        emails.push(firstName + lastName.substring(0,1) + '@' + domain)
-        emails.push(firstName + '.' +lastName.substring(0,1) + '@' + domain)
-        emails.push(firstName.substring(0,1) + lastName.substring(0,1) + '@' + domain)
-        emails.push(firstName.substring(0,1) + '.' + lastName.substring(0,1) + '@' + domain)
-        
-        var temp = firstName
-        firstName = lastName
-        firstName = temp
+            $http.post('/login', user).
+                success(function(data, status){
+                console.log(data)
+                console.log(status)
 
-        //Backwards
-        emails.push(firstName + lastName + '@'+ domain)
-        emails.push(firstName + '.' + lastName + '@' + domain)
-        emails.push(firstName.substring(0,1) + lastName + '@' + domain)
-        emails.push(firstName.substring(0,1) + '.' + lastName + '@' + domain)
-        emails.push(firstName + lastName.substring(0,1) + '@' + domain)
-        emails.push(firstName + '.' +lastName.substring(0,1) + '@' + domain)
-        emails.push(firstName.substring(0,1) + lastName.substring(0,1) + '@' + domain)
-        emails.push(firstName.substring(0,1) + '.' + lastName.substring(0,1) + '@' + domain)
-        
-        var temp = firstName
-        firstName = lastName
-        firstName = temp
+                if($("#alert-warning-email-exists").length > 0)
+                  $("#alert-warning-email-exists").remove()
 
-        //Middle Names
-        emails.push(firstName.substring(0,1) + middleName.substring(0,1) + lastName + '@'+ domain)
-        emails.push(firstName + middleName.substring(0,1) + lastName + '@'+ domain)
-        emails.push(firstName + middleName.substring(0,1) + '.' + lastName + '@'+ domain)
-        emails.push(firstName + '.' + middleName.substring(0,1) + '.' + lastName + '@'+ domain)
-        emails.push(firstName + middleName + lastName + '@'+ domain)
-        emails.push(firstName + '.' + middleName + '.' +lastName + '@'+ domain)
-        
-        //Dashes
-        emails.push(firstName + '-' +lastName + '@'+ domain)
-        emails.push(firstName.substring(0,1) + '-' +lastName + '@'+ domain)
-        emails.push(firstName + '-' +lastName.substring(0,1) + '@'+ domain)
-        emails.push(firstName.substring(0,1) + '-' + lastName.substring(0,1) + '@'+ domain)
-        emails.push(lastName + '-' + firstName.substring(0,1) + '@'+ domain)
-        emails.push(lastName.substring(0,1) + '-' + firstName + '@'+ domain)
-        emails.push(lastName.substring(0,1) + '-' + firstName.substring(0,1) + '@'+ domain)
-        emails.push(lastName + '-' + middleName.substring(0,1) + '-' + firstName + '@'+ domain)
-        emails.push(lastName.substring(0,1) + '-' + middleName + '-' + firstName.substring(0,1) + '@'+ domain)
-        emails.push(lastName+ '-' + middleName + '-' + firstName + '@'+ domain)
-       
-        //Underscores
-        emails.push(firstName + '_' +lastName + '@'+ domain)
-        emails.push(firstName.substring(0,1) + '_' +lastName + '@'+ domain)
-        emails.push(firstName + '_' +lastName.substring(0,1) + '@'+ domain)
-        emails.push(firstName.substring(0,1) + '_' + lastName.substring(0,1) + '@'+ domain)
-        emails.push(lastName + '_' + firstName.substring(0,1) + '@'+ domain)
-        emails.push(lastName.substring(0,1) + '_' + firstName + '@'+ domain)
-        emails.push(lastName.substring(0,1) + '_' + firstName.substring(0,1) + '@'+ domain)
-        emails.push(lastName + '_' + middleName.substring(0,1) + '_' + firstName + '@'+ domain)
-        emails.push(lastName.substring(0,1) + '_' + middleName + '_' + firstName.substring(0,1) + '@'+ domain)
-        emails.push(lastName+ '_' + middleName + '_' + firstName + '@'+ domain)
+                  var notification = "<div id='alert-success' class=\"alert alert-info alert-sm\">"
+                    + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"
+                    + "<span class=\"fw-semi-bold\">SUCCESS! You are now being redirected!</span>"
+                    + "</div>"
+
+                  $('#message-notifier').append(notification)
+                  $('.alert-info').css('color','#31708f')
+                   
+                  setTimeout(function(){}, 10)
+                  console.log('searcg')
+                  $location.path('/search')
+                  
+                }).
+                error(function(data, status){
+                console.log('User Exists with that Email!')
+                console.log(data)
+                console.log(status)
+
+                if($("#alert-warning-email-exists").length < 1){
+
+                  var notification = "<div id='alert-warning-email-exists' class=\"alert alert-danger alert-sm\">"
+                    + "<button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">×</button>"
+                    + "<span class=\"fw-semi-bold\">Sorry, that email and password is not valid.</span>"
+                    + "</div>"
+
+                  $('#message-notifier').append(notification)
+                    $(".alert").fadeOut(4000, function() { 
+                        $(this).remove()
+                    })
+                }
+                })
+            $location.path('/rapportive')
+
+        }
+        $(".alert").fadeOut(4000, function() { 
+            $(this).remove()
+        })
+
+    }
 
 
-        var masterEmailList = ''
-
-        for (var i = 0; i < emails.length-1; i++)
-            masterEmailList += emails[i] +', '
-        
-        masterEmailList += emails[emails.length-1]
-
-        $("body").append("<input type='text' id='temp' style='position:absolute;opacity:0;'>");
-        $("#temp").val(masterEmailList).select();
-        document.execCommand("copy");
-        $("#temp").remove();
-
-        console.log(masterEmailList)
-        alert('Your emails have been generated!')
-        
-    };
+    
 });

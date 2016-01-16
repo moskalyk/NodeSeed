@@ -15,6 +15,8 @@
     "angular-route": "~1.4.3",
     "jquery": "~2.1.4",
     "materialize": "~0.97.0",
-    "angular-material": "~1.0.1"
+    "angular-material": "~1.0.1",
+    "font-awesome": "~4.5.0",
+    "animate.css": "~3.5.1"
   }
 }
