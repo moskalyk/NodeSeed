@@ -23,6 +23,33 @@
  	</div>
 </div>
 </body> -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/bootstrap-extend.min.css">
+  <link rel="stylesheet" href="../css/site.min.css">
+  <link rel="stylesheet" href="../css/chatStyles.css">
+
+  <!-- Plugins -->
+  <link rel="stylesheet" href="../vendor/animsition/animsition.css">
+  <link rel="stylesheet" href="../vendor/asscrollable/asScrollable.css">
+  <link rel="stylesheet" href="../vendor/switchery/switchery.css">
+  <link rel="stylesheet" href="../vendor/intro-js/introjs.css">
+  <link rel="stylesheet" href="../vendor/slidepanel/slidePanel.css">
+  <link rel="stylesheet" href="../vendor/flag-icon-css/flag-icon.css">
+
+  <!-- Plugins For This Page -->
+  <link rel="stylesheet" href="../vendor/chartist-js/chartist.css">
+  <link rel="stylesheet" href="../vendor/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="../vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
+
+  <!-- Page -->
+  <link rel="stylesheet" href="../css/../fonts/weather-icons/weather-icons.css">
+  <link rel="stylesheet" href="../css/dashboard/v1.css">
+
+  <!-- Fonts -->
+  <link rel="stylesheet" href="../fonts/web-icons/web-icons.min.css">
+  <link rel="stylesheet" href="../fonts/brand-icons/brand-icons.min.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Noto+Sans:400,400italic,700'> -->
+  <link rel="stylesheet" type="text/css" href="../bower_components/font-awesome/css/font-awesome.min.css">
 
 <head>
   <meta charset="utf-8">
@@ -33,6 +60,8 @@
 
   <title>Data.com | Maple Tree Capital</title>
   
+<!-- Stylesheets -->
+
   <!--[if lt IE 9]>
     <script src="../vendor/html5shiv/html5shiv.min.js"></script>
     <![endif]-->
@@ -43,6 +72,8 @@
     <![endif]-->
 
   <!-- Scripts -->
+  <script src="../vendor/modernizr/modernizr.js"></script>
+  <script src="../vendor/breakpoints/breakpoints.js"></script>
   <script>
     Breakpoints();
   </script>
@@ -53,7 +84,69 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-<div ng-include="'templates/navigation.html'"></div>
+<!-- <div ng-include="'templates/navigation.html'"></div> -->
+<div ng-controller='headerController'>
+<nav class="site-navbar  navbar navbar-default navbar-fixed-top navbar-mega " role="navigation" >
+  <div class="navbar-header site-menubar-light">
+    <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+    data-toggle="menubar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+      <div style="text-align: center;">
+        <span class="navbar-brand-text"> Maple Tree Capital</span>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-container container-fluid">
+    <ul class="nav navbar-toolbar">
+      <li class="hidden-float" id="toggleMenubar">
+        <a id='hamburger' data-toggle="menubar">
+          <i class="icon hamburger hamburger-arrow-left">
+              <span class="sr-only">Toggle menubar</span>
+              <span class="hamburger-bar"></span>
+            </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="site-menubar">
+  <div class="site-menubar-body">
+    <div>
+      <ul class="site-menu">
+        <li class="site-menu-category">Navigation</li>
+        <br>
+        <li id='data-dot-com-tab' class="site-menu-item" ng-click="dataDotCom()" >
+          <a   >
+            <i class="site-menu-icon fa fa-database" ></i>
+            <span class="site-menu-title" >Data.com</span>
+          </a>
+        </li>
+        <li id='full-contact-tab' class="site-menu-item" ng-click="fullContact()">
+          <a   >
+            <i class="site-menu-icon fa fa-user" aria-hidden="true"></i>
+            <span class="site-menu-title">Full Contact</span>
+          </a>
+        </li>
+        <li id='rapportive-tab' class="site-menu-item" ng-click="rapportive()" >
+          <a >
+            <i class="site-menu-icon fa fa-envelope" aria-hidden="true"></i>
+            <span class="site-menu-title">Rapportive</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-menubar-footer">
+  <a href="" data-placement="top" data-toggle="tooltip" data-original-title="Logout" ng-click="logout()">
+    <span class="icon wb-power" aria-hidden="true"></span>
+  </a>
+  </div>
+</div>
+</div>
   <!-- Page -->
   <div class="page">
     <div class="page-content padding-30 container-fluid" style="height: 100vh;">
@@ -70,7 +163,7 @@
                       <input type="text" class="form-control input-lg" placeholder="First Name" id='first-name' style="margin-bottom: 20px;">
                       <input type="text" class="form-control input-lg" placeholder="Middle Name" id='middle-name' style="margin-bottom: 20px;">
                       <input type="text" class="form-control input-lg" placeholder="Last Name" id='last-name' style="margin-bottom: 20px;">
-                      <input type="text" class="form-control input-lg" placeholder="Domain (e.g. 'gmail.com'" id='domain' style="margin-bottom: 20px;">
+                      <input type="text" class="form-control input-lg" placeholder="Domain (e.g. 'gmail.com')" id='domain' style="margin-bottom: 20px;">
                     </div>
                     <button type="button" class="btn btn-lg btn-success btn-outline btn-round" ng-click="submit()">Generate Emails</button>
                   </div>
@@ -86,4 +179,8 @@
     </div>
   </div>
 </body>
+  <script src="../js/sections/menu.js"></script>
+  <script src="../js/sections/menubar.js"></script>
+  <script src="../js/sections/sidebar.js"></script>
+  <script src="../examples/js/advanced/scrollable.js"></script>
 

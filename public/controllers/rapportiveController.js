@@ -1,5 +1,9 @@
 
 MTC.controller('rapportiveController', function($scope, $http, $location) {
+	$.getScript('../js/sections/menu.js')
+    $.getScript('../js/sections/menubar.js')
+    $.getScript('../js/sections/sidebar.js')
+    $.getScript('../examples/js/advanced/scrollable.js')
 
 	function validateEmail(email) {
 	    var re = /((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

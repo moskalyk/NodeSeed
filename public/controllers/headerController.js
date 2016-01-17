@@ -1,4 +1,7 @@
 MTC.controller('headerController', function($scope, $http, $location) {
+	// $('#hamburger').trigger('click')
+	// $('#hamburger').trigger('click')
+	// location.reload()
 	var partial = window.location.href.split('/#/')
 	partial = partial[1]
 	$scope.poop ='Navigation'

@@ -1,5 +1,5 @@
 {
-  "name": "Mean",
+  "name": "MTC",
   "main": "server.js",
   "dependencies": {
     "body-parser": "~1.0.0",
@@ -9,6 +9,7 @@
     "helmet": "^0.10.0",
     "method-override": "~2.1.2",
     "mongoose": "*",
-    "morgan": "~1.0.0"
+    "morgan": "~1.0.0",
+    "request": "^2.67.0"
   }
 }
