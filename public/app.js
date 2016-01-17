@@ -1,7 +1,6 @@
  
  var MTC = angular.module('MTC', ['ngRoute']);
 
- // configure our routes
  MTC.config(function($routeProvider) {
 
      $routeProvider
