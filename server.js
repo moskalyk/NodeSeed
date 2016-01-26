@@ -37,9 +37,15 @@ app.use(function(req, res, next) {
 
 // SCHEMAS ============================================
 require('./db/userSchema.js')
+require('./db/companySchema.js')
+require('./db/naicsSchema.js')
+require('./db/searchSchema.js')
 
 // MODELS =============================================
 User = db.model('User', userSchema)
+Company = db.model('Company', companySchema)
+NAICS = db.model('NAICS', naicsSchema)
+Search = db.model('Search', searchSchema)
 
 //ROUTES ==============================================
 require('./routes/routes.js')(app); 

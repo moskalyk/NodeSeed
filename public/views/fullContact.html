@@ -80,12 +80,39 @@
             <span class="site-menu-title">Rapportive</span>
           </a>
         </li>
+        <li id='industry-main-tab' class="site-menu-item has-sub">
+              <a href="javascript:void(0)" data-slug="layout">
+                <i class="site-menu-icon fa fa-industry" aria-hidden="true"></i>
+                <span class="site-menu-title">Industry Canada</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li id='industry-search-tab' class="site-menu-item is-shown" ng-click="industryCanada()">
+                  <a class="animsition-link" href="" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">Industry Browse</span>
+                  </a>
+                </li>
+                <li id='naics-lookup-tab' class="site-menu-item is-shown" ng-click="naicsLookUp()">
+                  <a class="animsition-link" href="" data-slug="layout-menu-expended">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">NAICS Lookup</span>
+                  </a>
+                </li>
+              </ul>
+        </li>
+        <li id='search-tab' class="site-menu-item" ng-click="search()" >
+          <a >
+            <i class="site-menu-icon fa fa-search" aria-hidden="true"></i>
+            <span class="site-menu-title">My Searches</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
   <div class="site-menubar-footer">
   <a href="" data-placement="top" data-toggle="tooltip" data-original-title="Logout" ng-click="logout()">
-    <span class="icon wb-power" aria-hidden="true">Logout</span>
+    <span class="icon wb-power" aria-hidden="true"></span>
   </a>
   </div>
 </div>
@@ -110,8 +137,15 @@
 	</div>
 </body>
 
+  <!-- Scripts -->
+  <script src="../js/core.js"></script>
+  <script src="../js/site.js"></script>
+
   <script src="../js/sections/menu.js"></script>
   <script src="../js/sections/menubar.js"></script>
   <script src="../js/sections/sidebar.js"></script>
 
+  <!-- Scripts For This Page -->
+  <script src="../js/components/matchheight.js"></script>
+  <script src="../js/components/asscrollable.js"></script>
   <script src="../examples/js/advanced/scrollable.js"></script>

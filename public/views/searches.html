@@ -1,0 +1,233 @@
+
+<!-- <body>
+<div class="container">
+	<div class="row">
+		<div class="col s12">
+			<br><br><br><br><br>
+			<div class="intro center">
+			  <img src="../_img/maple-tree-capital.png">
+			  <h5 class="grey-text">Rapportive Generator</h5>
+			</div>
+		</div>
+	</div>
+	
+ 	<div class="row">
+ 		<div class="col s4 offset-s4">
+			<label for="username">Account ID</label>
+			<br>
+			<input type="text" name="FirstName" id="first-name"  placeholder="First Name"/>
+			<input type="text" name="MiddleName" id="middle-name"  placeholder="Middle Name"/>
+			<input type="text" name="LastName" id="last-name" placeholder="Last Name"/>
+			<input type="text" name="Domain" id="domain"  placeholder="Domain"/>
+			<a id="login" class="waves-effect btn danger" ng-click="submit()">Generate Emails</a>
+ 		</div>
+ 	</div>
+</div>
+</body> -->
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="maple tree capital">
+  <meta name="author" content="">
+
+  <title>Industry Canada | Maple Tree Capital</title>
+  
+<!-- Stylesheets -->
+
+  <!--[if lt IE 9]>
+    <script src="../vendor/html5shiv/html5shiv.min.js"></script>
+    <![endif]-->
+
+  <!--[if lt IE 10]>
+    <script src="../vendor/media-match/media.match.min.js"></script>
+    <script src="../vendor/respond/respond.min.js"></script>
+    <![endif]-->
+
+  <!-- Scripts -->
+  <script src="../vendor/modernizr/modernizr.js"></script>
+  <script src="../vendor/breakpoints/breakpoints.js"></script>
+      <link rel="stylesheet" href="../css/dataTable.css">
+
+  <script>
+    Breakpoints();
+  </script>
+</head>
+<body class="dashboard">
+ 
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<!-- <div ng-include="'templates/navigation.html'"></div> -->
+<div ng-controller='headerController'>
+<nav class="site-navbar  navbar navbar-default navbar-fixed-top navbar-mega " role="navigation" >
+  <div class="navbar-header site-menubar-light">
+    <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
+    data-toggle="menubar">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <div class="navbar-brand navbar-brand-center site-gridmenu-toggle" data-toggle="gridmenu">
+      <div style="text-align: center;">
+        <span class="navbar-brand-text"> Maple Tree Capital</span>
+      </div>
+    </div>
+  </div>
+  <div class="navbar-container container-fluid">
+    <ul class="nav navbar-toolbar">
+      <li class="hidden-float" id="toggleMenubar">
+        <a id='hamburger' data-toggle="menubar">
+          <i class="icon hamburger hamburger-arrow-left">
+              <span class="sr-only">Toggle menubar</span>
+              <span class="hamburger-bar"></span>
+            </i>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="site-menubar">
+  <div class="site-menubar-body">
+    <div>
+      <ul class="site-menu">
+        <li class="site-menu-category">Navigation</li>
+        <br>
+        <li id='data-dot-com-tab' class="site-menu-item" ng-click="dataDotCom()" >
+          <a   >
+            <i class="site-menu-icon fa fa-database" ></i>
+            <span class="site-menu-title" >Data.com</span>
+          </a>
+        </li>
+        <li id='full-contact-tab' class="site-menu-item" ng-click="fullContact()">
+          <a   >
+            <i class="site-menu-icon fa fa-user" aria-hidden="true"></i>
+            <span class="site-menu-title">Full Contact</span>
+          </a>
+        </li>
+        <li id='rapportive-tab' class="site-menu-item" ng-click="rapportive()" >
+          <a >
+            <i class="site-menu-icon fa fa-envelope" aria-hidden="true"></i>
+            <span class="site-menu-title">Rapportive</span>
+          </a>
+        </li>
+        <li id='industry-main-tab' class="site-menu-item has-sub">
+              <a href="javascript:void(0)" data-slug="layout">
+                <i class="site-menu-icon fa fa-industry" aria-hidden="true"></i>
+                <span class="site-menu-title">Industry Canada</span>
+                <span class="site-menu-arrow"></span>
+              </a>
+              <ul class="site-menu-sub">
+                <li id='industry-search-tab' class="site-menu-item is-shown" ng-click="industryCanada()">
+                  <a class="animsition-link" href="" data-slug="layout-menu-collapsed">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">Industry Browse</span>
+                  </a>
+                </li>
+                <li id='naics-lookup-tab' class="site-menu-item is-shown" ng-click="naicsLookUp()">
+                  <a class="animsition-link" href="" data-slug="layout-menu-expended">
+                    <i class="site-menu-icon " aria-hidden="true"></i>
+                    <span class="site-menu-title">NAICS Lookup</span>
+                  </a>
+                </li>
+              </ul>
+        </li>
+        <li id='search-tab' class="site-menu-item" ng-click="search()" >
+          <a >
+            <i class="site-menu-icon fa fa-search" aria-hidden="true"></i>
+            <span class="site-menu-title">My Searches</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="site-menubar-footer">
+  <a href="" data-placement="top" data-toggle="tooltip" data-original-title="Logout" ng-click="logout()">
+    <span class="icon wb-power" aria-hidden="true"></span>
+  </a>
+  </div>
+</div>
+</div>
+  <!-- Page -->
+  <div class="page">
+    <div class="page-content padding-30 container-fluid" >
+      <div class="row" data-plugin="matchHeight" data-by-row="true">
+        <div class="col-md-12">
+          <div class="panel" style="margin-top: 60px;">
+            <div class="panel-body container-fluid">
+              <div class="example-wrap">
+                <!-- <h4 class="example-title">Polygons</h4> -->
+                <div class="example">
+                  <h1>My Searches</h1>
+                  <div class="col-lg-12">
+                  <hr>
+                    <table datatable="ng" class="row-border hover">
+                        <thead>
+                        <tr>
+                            <!-- <th>_id</th> -->
+                            <!-- <th>Company Name</th> -->
+                            <th>Company Contact</th>
+                            <th>Contact Title</th>
+                            <th>Contact Email</th>
+                            <th>Contact Telephone</th>
+                            <th>Contact Employees</th>
+                            <th>Sales (Lower)</th>
+                            <th>Sales (Higher)</th>
+                            <th>Date Saved</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="person in persons">
+                            <!-- <td>{{ person._id }}</td> -->
+                            <!-- <td>{{ person.CompanyName }}</td> -->
+                            <td>{{ person.Name }}</td>
+                            <td>{{ person.Title }}</td>
+                            <td>{{ person.Email }}</td>
+                            <td>{{ person.Telephone }}</td>
+                            <td>{{ person.Employees }}</td>
+                            <td>{{ person.Lower }}</td>
+                            <td>{{ person.Upper }}</td>
+                            <td>{{ person.Date }}</td>
+                          <!--   <td><a ng-href="{{person.CompanyLink}}" target="_blank">{{ person.CompanyLink }}</a></td>
+                            <td ng-src='person.NAICSLink'>Indsutry Canada</td>
+                            <td ng-click="getCompany(person.NAICSLink)" target="_blank"><a href=""><i class="fa fa-share-square fa-2x"></i></a></td> -->
+                        </tr>
+                        </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script type="text/javascript">
+  window.onload = function(){
+
+  }
+</script>
+
+  <!-- Scripts -->
+  <script src="../js/core.js"></script>
+  <script src="../js/site.js"></script>
+
+  <script src="../js/sections/menu.js"></script>
+  <script src="../js/sections/menubar.js"></script>
+  <script src="../js/sections/sidebar.js"></script>
+
+  <!-- Scripts For This Page -->
+  <script src="../js/components/matchheight.js"></script>
+  <script src="../js/components/asscrollable.js"></script>
+  <script src="../examples/js/advanced/scrollable.js"></script>
+
+
+  
+
+

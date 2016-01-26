@@ -17,6 +17,8 @@
     "materialize": "~0.97.0",
     "angular-material": "~1.0.1",
     "font-awesome": "~4.5.0",
-    "animate.css": "~3.5.1"
+    "animate.css": "~3.5.1",
+    "ng-table": "~0.8.3",
+    "angular-datatables": "~0.5.2"
   }
 }

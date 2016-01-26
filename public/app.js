@@ -1,5 +1,5 @@
  
- var MTC = angular.module('MTC', ['ngRoute']);
+ var MTC = angular.module('MTC', ['ngRoute','datatables']);
 
  MTC.config(function($routeProvider) {
 
@@ -19,6 +19,22 @@
      .when('/rapportive', {
          templateUrl: 'views/rapportive.html',
          controller: 'rapportiveController'
+     })
+     .when('/industry-canada/browse', {
+         templateUrl: 'views/industryCanada.html',
+         controller: 'industryCanadaController'
+     })
+     .when('/naics/:code', {
+         templateUrl: 'views/naicsCode.html',
+         controller: 'naicsCodeController'
+     })
+     .when('/industry-canada/naics-look-up', {
+         templateUrl: 'views/naics.html',
+         controller: 'naicsController'
+     })
+     .when('/searches', {
+         templateUrl: 'views/searches.html',
+         controller: 'searchController'
      })
     .otherwise({
         redirectTo: '/'
