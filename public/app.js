@@ -1,46 +1,18 @@
  
- var MTC = angular.module('MTC', ['ngRoute','datatables']);
+ var MEAN = angular.module('MEAN', ['ngRoute']);
 
- MTC.config(function($routeProvider) {
+ MEAN.config(function($routeProvider) {
 
      $routeProvider
      .when('/', {
-         templateUrl: 'views/login.html',
-         controller: 'loginController'
-     })
-     .when('/data-dot-com', {
-         templateUrl: 'views/data.html',
-         controller: 'dataController'
-     })
-     .when('/full-contact', {
-         templateUrl: 'views/fullContact.html',
-         controller: 'fullContactController'
-     })
-     .when('/rapportive', {
-         templateUrl: 'views/rapportive.html',
-         controller: 'rapportiveController'
-     })
-     .when('/industry-canada/browse', {
-         templateUrl: 'views/industryCanada.html',
-         controller: 'industryCanadaController'
-     })
-     .when('/naics/:code', {
-         templateUrl: 'views/naicsCode.html',
-         controller: 'naicsCodeController'
-     })
-     .when('/industry-canada/naics-look-up', {
-         templateUrl: 'views/naics.html',
-         controller: 'naicsController'
-     })
-     .when('/searches', {
-         templateUrl: 'views/searches.html',
-         controller: 'searchController'
+         templateUrl: 'views/home.html',
+         controller: 'homeController'
      })
     .otherwise({
         redirectTo: '/'
       });
  });
  
- MTC.controller('mainController', function($scope) {
+ MEAN.controller('mainController', function($scope) {
     
  });

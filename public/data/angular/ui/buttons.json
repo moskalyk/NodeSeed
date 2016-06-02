@@ -1,9 +1,0 @@
-{
-  "singleModel" : 1,
-  "radioModel"  : "Middle",
-  "checkModel"  : {
-    "left"   : false,
-    "middle" : false,
-    "right"  : false
-  }
-}

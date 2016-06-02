@@ -1,21 +1,19 @@
 
 var express 		= require('express'),
-	app 			= express(),
-	helmet			= require('helmet'),
-	logger 			= require('morgan'),
+	app 			    = express(),
+	helmet			  = require('helmet'),
+	logger 			  = require('morgan'),
 	cookieParser 	= require('cookie-parser'),
 	bodyParser 		= require('body-parser'),
 	compression		= require('compression'),
-	port 			= process.env.PORT || 3000,
-	methodOverride 	= require('method-override');
-	db 				= require('mongoose') //shhh this is global for our schemas
+	port 			    = process.env.PORT || 3000;
+	db 				= require('mongoose'); //shhh this is global for our schemas
 
 // DATBASE CONFIGS ===================================
-db.connect('mongodb://morgan:password@ds047075.mongolab.com:47075/mapletreecapital', function(err, db) {
-    if (err) throw err;
-    console.log("Connected to Database");
-    _db = db 
-})
+// db.connect('mongodb://<username>:<password>@ds047075.mongolab.com:47075', function(err, db) {
+//     if (err) throw err;
+//     console.log("Connected to Database");
+// })
 
 // EXPRESS CONFIGS ===================================
 app.use(compression())
@@ -24,7 +22,6 @@ app.use(logger('dev'))
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
-app.use('/controllers',express.static(__dirname, 'public/controllers'));
 app.use(cookieParser()); 
 
 
@@ -37,15 +34,9 @@ app.use(function(req, res, next) {
 
 // SCHEMAS ============================================
 require('./db/userSchema.js')
-require('./db/companySchema.js')
-require('./db/naicsSchema.js')
-require('./db/searchSchema.js')
 
 // MODELS =============================================
 User = db.model('User', userSchema)
-Company = db.model('Company', companySchema)
-NAICS = db.model('NAICS', naicsSchema)
-Search = db.model('Search', searchSchema)
 
 //ROUTES ==============================================
 require('./routes/routes.js')(app); 
