@@ -1,11 +1,7 @@
-#A simplified NodeJs seed
-
-##Usage 
-Open up your terminal, navigate to a safe directory, and perform the following commands to get started.
-
+# A simplified NodeJs seed
 ```
-$ git clone https://github.com/moskalyk/MeanSeed
-$ cd MeanSeed
+$ git clone https://github.com/moskalyk/NodeSeed
+$ cd NodeSeed
 $ yarn
 $ yarn test
 $ yarn start
