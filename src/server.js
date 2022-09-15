@@ -22,13 +22,13 @@ app.use((req, res, next) => {
 }); 
 
 app.use((req, res, next) => {
-  log.info({ req, module: 'api' }, `New request from ${utils.getIP(req)} on ${utils.getMethodAPI(req)}`);
+  log.info({ req, module: 'api' }, `New request`);
   next();
 });
 
 // APPLY ROUTES
 const indexRouter = require('./routes/index');
-app.use('/', indexRouter);
+app.use('/index', indexRouter);
 
 app.listen(PORT, () => {
   log.info({ module: 'api' }, `${app.name} listening on port:${PORT}`);

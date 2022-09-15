@@ -1,4 +1,4 @@
-
+const log = require('../utils/logger.js');
 /**
  * Simple index return
  * @returns {Object}    Returns a greeting
@@ -10,7 +10,7 @@ async function index(req, res, next) {
     return next();
   }catch(e) {
     res.status(500).send({error: "Error"});
-    return next(err);
+    return next(e);
   }
 }
 
