@@ -4,6 +4,7 @@ const indexController = require('../controllers/indexController');
 
 //  ROUTES
 router.get('/', indexController.index);
+router.post('/', indexController.email);
 
 module.exports = router;
 
