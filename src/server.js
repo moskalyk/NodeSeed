@@ -6,7 +6,7 @@ const app = express();
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // EXPRESS CONFIGS ===================================
 app.use(logger('dev'))
